@@ -1,24 +1,22 @@
 package com.ams.sisvendas.controller;
 
-import java.util.List;
-
 import com.ams.sisvendas.entities.Sale;
 import com.ams.sisvendas.service.SaleService;
+import com.ams.sisvendas.service.SmsService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/sales")
 public class SaleController {
 
     private final SaleService saleService;
+    private final SmsService smsService;
 
-    public SaleController(SaleService saleService) {
+    public SaleController(SaleService saleService, SmsService smsService) {
         this.saleService = saleService;
+        this.smsService = smsService;
     }
 
     @GetMapping
@@ -28,5 +26,10 @@ public class SaleController {
         return this.saleService.getAllSale(minDate,
                 maxDate,
                 pageable);
+    }
+
+    @GetMapping("/{id}/notification")
+    public void notificationSms(@PathVariable Long id) {
+        this.smsService.sendSms(id);
     }
 }

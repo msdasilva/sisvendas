@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SisvendasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="sisvendas" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.ams.sisvendas.SisvendasApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <envs>
+      <env name="TWILIO_SID" value="AC5a189df9f04c594ddf064c0415b5137a" />
+      <env name="TWILIO_KEY" value="a88db6e580805a0be194900532a732f5" />
+      <env name="TWILIO_PHONE_FROM" value="+19156215285" />
+      <env name="TWILIO_PHONE_TO" value="+5521981969462" />
+    </envs>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

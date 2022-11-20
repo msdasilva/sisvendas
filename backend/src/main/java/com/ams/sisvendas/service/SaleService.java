@@ -31,4 +31,8 @@ public class SaleService {
 
         return this.saleRepository.getAllSale(minData, maxData, pageable);
     }
+
+    public Sale findById(Long idSale) {
+        return this.saleRepository.findById(idSale).get();
+    }
 }
