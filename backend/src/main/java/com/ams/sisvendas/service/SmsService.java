@@ -44,7 +44,7 @@ public class SmsService {
         Sale sale = this.saleService.findById(idSale);
         return "O Vendendo: " +
                 sale.getSellerName() +
-                "foi destaque em " +
+                " foi destaque em " +
                 sale.getDate().getMonthValue() +
                 "/" +
                 sale.getDate().getYear() +
